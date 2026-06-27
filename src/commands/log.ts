@@ -3,14 +3,14 @@ import { readFile, writeFile, exists } from '../utils/fileio';
 
 const CHANGELOG_HEADING = /^## Changelog\s*$/m;
 const EMPTY_PLACEHOLDER =
-  /\(no entries yet — run `contextkit log "description"` after your first change\)\s*/;
+  /\(no entries yet — run `vibekit log "description"` after your first change\)\s*/;
 
 /**
  * Append a new changelog entry (newest on top) with today's ISO date.
  */
 export function logCommand(message: string): void {
   if (!message || !message.trim()) {
-    throw new Error('A message is required: contextkit log "what you changed"');
+    throw new Error('A message is required: vibekit log "what you changed"');
   }
 
   const cwd = process.cwd();
@@ -18,7 +18,7 @@ export function logCommand(message: string): void {
 
   if (!exists(changelogPath)) {
     throw new Error(
-      'CHANGELOG.md not found. Run `contextkit init` first.'
+      'CHANGELOG.md not found. Run `vibekit init` first.'
     );
   }
 
@@ -50,7 +50,7 @@ export function logCommand(message: string): void {
     console.log('');
     console.log(
       `You now have ${activeCount} active entries. ` +
-        'Consider running `contextkit prune` to trim resolved [DONE] entries.'
+        'Consider running `vibekit prune` to trim resolved [DONE] entries.'
     );
   }
 }

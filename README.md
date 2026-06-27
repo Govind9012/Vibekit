@@ -1,27 +1,30 @@
-[![npm version](https://img.shields.io/npm/v/contextkit.svg)](https://www.npmjs.com/package/contextkit)
+[![npm version](https://img.shields.io/npm/v/vibekit.svg)](https://www.npmjs.com/package/vibekit)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
-# ContextKit
+# Vibekit
 
-**A lean alternative to heavyweight Spec-Driven Development (SDD).** Instead of
-generating a spec/plan/tasks document set for every feature, ContextKit maintains
+**Vibe code without losing the plot.** Vibekit keeps fast, AI-driven "vibe
+coding" accurate by giving your assistant lean, *verifiable* context — a
+lightweight alternative to heavyweight Spec-Driven Development (SDD). Instead of
+generating a spec/plan/tasks document set for every feature, Vibekit maintains
 **3 persistent markdown files** that any AI coding assistant — Copilot, Claude,
 Cursor, Windsurf — reads automatically. No per-feature ceremony, no token bloat,
 and a working setup in **under 2 minutes**. It's tool-agnostic by design: the
 canonical file is `AGENTS.md`, and everything else mirrors from it.
 
-> Working name is **ContextKit** — suggestions welcome if you find a better one.
+> **Motto:** *vibe fast, stay grounded.* The `AGENTS.md` Verify-before-trust
+> rule means the AI treats notes as hints and the current code as ground truth.
 
 ---
 
 ## Quickstart
 
 ```bash
-npx contextkit init
+npx vibekit init
 ```
 
 Answer one question ("What's this project mostly?") and you're done — under two
-minutes to a working setup. ContextKit creates four files in your current
+minutes to a working setup. Vibekit creates four files in your current
 directory:
 
 | File | Purpose |
@@ -39,14 +42,14 @@ directory:
 top of this GitHub repo to clone the structure into a fresh repository. Good for
 brand-new projects.
 
-**(b) npx CLI (add to an existing repo).** Run `npx contextkit init` inside any
+**(b) npx CLI (add to an existing repo).** Run `npx vibekit init` inside any
 existing project to drop the files in without touching the rest of your code.
 
 ---
 
-## ContextKit vs. typical SDD tools
+## Vibekit vs. typical SDD tools
 
-| | ContextKit | Typical SDD tool (Spec-Kit, BMAD) |
+| | Vibekit | Typical SDD tool (Spec-Kit, BMAD) |
 | --- | --- | --- |
 | Setup time | < 2 minutes | 15–60 minutes |
 | Files per feature | 0 (3 persistent files total) | 3+ (spec, plan, tasks) per feature |
@@ -54,7 +57,7 @@ existing project to drop the files in without touching the rest of your code.
 | Best when | Solo devs / small teams wanting fast AI context | Large teams needing formal, auditable specs for complex features |
 
 Use a full SDD framework when you genuinely need formal, reviewable
-specifications per feature. Reach for ContextKit when you just want your AI
+specifications per feature. Reach for Vibekit when you just want your AI
 assistant to have accurate, lightweight context without the overhead.
 
 ---
@@ -68,7 +71,7 @@ Keep it accurate; it's the source of durable context.
 
 ### `CHANGELOG.md` — rolling log
 Newest entry first. Each entry has an exact ISO date, what changed and why, and
-the files/functions touched. Mark resolved entries `[DONE]`; `contextkit prune`
+the files/functions touched. Mark resolved entries `[DONE]`; `vibekit prune`
 trims old resolved entries so the file stays small (~10 active entries max).
 
 ### `DECISIONS.md` — architecture decisions
@@ -101,8 +104,8 @@ Built-in packs:
 Manage packs at any time:
 
 ```bash
-contextkit packs add data-eng
-contextkit packs remove dev
+vibekit packs add data-eng
+vibekit packs remove dev
 ```
 
 ### Add a custom pack
@@ -118,7 +121,7 @@ contextkit packs remove dev
    <!-- pack:security:end -->
    ```
 
-3. Activate it: `contextkit packs add security`.
+3. Activate it: `vibekit packs add security`.
 
 See [`principles-catalog.md`](./principles-catalog.md) for the full menu.
 
@@ -128,12 +131,12 @@ See [`principles-catalog.md`](./principles-catalog.md) for the full menu.
 
 | Command | What it does |
 | --- | --- |
-| `contextkit init` | Scaffold the 4 files (asks one question). |
-| `contextkit log "<message>"` | Append a dated changelog entry (newest on top). |
-| `contextkit prune` | Remove `[DONE]` entries except the 5 most recent. |
-| `contextkit packs add <name>` | Insert a pack block into `AGENTS.md`. |
-| `contextkit packs remove <name>` | Remove a pack block from `AGENTS.md`. |
-| `contextkit sync` | Mirror `AGENTS.md` to `CLAUDE.md`, `.windsurfrules`, `.github/copilot-instructions.md`. |
+| `vibekit init` | Scaffold the 4 files (asks one question). |
+| `vibekit log "<message>"` | Append a dated changelog entry (newest on top). |
+| `vibekit prune` | Remove `[DONE]` entries except the 5 most recent. |
+| `vibekit packs add <name>` | Insert a pack block into `AGENTS.md`. |
+| `vibekit packs remove <name>` | Remove a pack block from `AGENTS.md`. |
+| `vibekit sync` | Mirror `AGENTS.md` to `CLAUDE.md`, `.windsurfrules`, `.github/copilot-instructions.md`. |
 
 > **About `sync`:** most modern tools (Copilot, Cursor, Windsurf) now read
 > `AGENTS.md` natively. `sync` is a fallback for tools/older setups that don't

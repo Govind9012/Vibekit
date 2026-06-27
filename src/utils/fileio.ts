@@ -62,7 +62,7 @@ export function assetPath(...segments: string[]): string {
     dir = parent;
   }
   throw new Error(
-    'Could not locate ContextKit assets (templates/ and packs/). ' +
+    'Could not locate Vibekit assets (templates/ and packs/). ' +
       'The package may be installed incorrectly.'
   );
 }

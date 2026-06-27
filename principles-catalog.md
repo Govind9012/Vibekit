@@ -1,11 +1,11 @@
 # Principles Catalog
 
-> A human-readable menu of the principle packs ContextKit ships with.
+> A human-readable menu of the principle packs Vibekit ships with.
 >
 > **This file is pure documentation.** It is copied into your repo for reference
 > only and is **never loaded or referenced by any AI assistant**. The packs that
 > AI actually reads live inside `AGENTS.md`. Use this catalog to decide which
-> packs to add via `contextkit packs add <name>`.
+> packs to add via `vibekit packs add <name>`.
 
 ---
 
@@ -18,13 +18,13 @@ its block is inserted into `AGENTS.md` between markers like
 To add a pack:
 
 ```bash
-contextkit packs add dev
+vibekit packs add dev
 ```
 
 To remove one:
 
 ```bash
-contextkit packs remove data-eng
+vibekit packs remove data-eng
 ```
 
 ---
@@ -77,7 +77,7 @@ For pipelines, ETL/ELT, and analytics engineering.
 3. Activate it:
 
    ```bash
-   contextkit packs add security
+   vibekit packs add security
    ```
 
 The marker name (`security`) must match the file name (`security.md`).

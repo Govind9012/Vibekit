@@ -66,8 +66,8 @@ export async function initCommand(): Promise<void> {
       'core'
     );
     const hint =
-      '<!-- Add more packs later, e.g. `contextkit packs add dev` ' +
-      'or `contextkit packs add data-eng`. See principles-catalog.md. -->';
+      '<!-- Add more packs later, e.g. `vibekit packs add dev` ' +
+      'or `vibekit packs add data-eng`. See principles-catalog.md. -->';
     agents = agents.replace(PACK_PLACEHOLDER, `${coreBlock}\n\n${hint}\n`);
   } else {
     for (const name of packs) {
@@ -97,7 +97,7 @@ export async function initCommand(): Promise<void> {
   );
 
   console.log('');
-  console.log('ContextKit initialized. Created:');
+  console.log('Vibekit initialized. Created:');
   console.log('  - AGENTS.md             (stable context + active packs: ' + packs.join(', ') + ')');
   console.log('  - CHANGELOG.md          (rolling log of recent changes)');
   console.log('  - DECISIONS.md          (architecture decisions worth keeping)');
@@ -105,6 +105,6 @@ export async function initCommand(): Promise<void> {
   console.log('');
   console.log("What's next:");
   console.log('  1. Fill in the Project Stack & Conventions sections of AGENTS.md.');
-  console.log('  2. Record changes with:  contextkit log "what you changed"');
-  console.log('  3. (Optional) mirror AGENTS.md for older tools:  contextkit sync');
+  console.log('  2. Record changes with:  vibekit log "what you changed"');
+  console.log('  3. (Optional) mirror AGENTS.md for older tools:  vibekit sync');
 }

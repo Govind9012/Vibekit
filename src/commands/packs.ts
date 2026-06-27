@@ -13,14 +13,14 @@ function loadAgents(): { agentsPath: string; content: string } {
   const cwd = process.cwd();
   const agentsPath = path.join(cwd, 'AGENTS.md');
   if (!exists(agentsPath)) {
-    throw new Error('AGENTS.md not found. Run `contextkit init` first.');
+    throw new Error('AGENTS.md not found. Run `vibekit init` first.');
   }
   return { agentsPath, content: readFile(agentsPath) };
 }
 
 export function packsAddCommand(name: string): void {
   if (!name) {
-    throw new Error('Usage: contextkit packs add <name>');
+    throw new Error('Usage: vibekit packs add <name>');
   }
 
   const packFile = assetPath('packs', `${name}.md`);
@@ -49,7 +49,7 @@ export function packsAddCommand(name: string): void {
 
 export function packsRemoveCommand(name: string): void {
   if (!name) {
-    throw new Error('Usage: contextkit packs remove <name>');
+    throw new Error('Usage: vibekit packs remove <name>');
   }
 
   const { agentsPath, content } = loadAgents();

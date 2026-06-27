@@ -9,10 +9,11 @@ import { syncCommand } from './commands/sync';
 const program = new Command();
 
 program
-  .name('contextkit')
+  .name('vibekit')
   .description(
     'Lean, AI-tool-agnostic project context: 3 persistent markdown files ' +
-      '(AGENTS.md, CHANGELOG.md, DECISIONS.md) instead of heavyweight SDD specs.'
+      '(AGENTS.md, CHANGELOG.md, DECISIONS.md) that keep vibe coding accurate, ' +
+      'instead of heavyweight SDD specs.'
   )
   .version('0.1.0');
 

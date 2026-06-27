@@ -1,8 +1,9 @@
 {
-  "name": "contextkit",
+  "name": "vibekit",
   "version": "0.1.0",
-  "description": "Lean, AI-tool-agnostic project context: 3 persistent markdown files (AGENTS.md, CHANGELOG.md, DECISIONS.md) instead of heavyweight Spec-Driven Development specs.",
+  "description": "Make vibe coding accurate: 3 persistent markdown files (AGENTS.md, CHANGELOG.md, DECISIONS.md) that give any AI coding assistant lean, verifiable context — a lightweight alternative to heavyweight Spec-Driven Development.",
   "keywords": [
+    "vibe-coding",
     "ai-coding",
     "agents-md",
     "developer-tools",
@@ -16,7 +17,7 @@
   "license": "MIT",
   "type": "commonjs",
   "bin": {
-    "contextkit": "dist/cli.js"
+    "vibekit": "dist/cli.js"
   },
   "main": "dist/cli.js",
   "files": [

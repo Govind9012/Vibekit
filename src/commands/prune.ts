@@ -13,7 +13,7 @@ export function pruneCommand(): void {
   const changelogPath = path.join(cwd, 'CHANGELOG.md');
 
   if (!exists(changelogPath)) {
-    throw new Error('CHANGELOG.md not found. Run `contextkit init` first.');
+    throw new Error('CHANGELOG.md not found. Run `vibekit init` first.');
   }
 
   const content = readFile(changelogPath);

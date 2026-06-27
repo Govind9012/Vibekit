@@ -10,7 +10,7 @@ export function syncCommand(): void {
   const agentsPath = path.join(cwd, 'AGENTS.md');
 
   if (!exists(agentsPath)) {
-    throw new Error('AGENTS.md not found. Run `contextkit init` first.');
+    throw new Error('AGENTS.md not found. Run `vibekit init` first.');
   }
 
   const content = readFile(agentsPath);
