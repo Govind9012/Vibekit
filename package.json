@@ -1,0 +1,47 @@
+{
+  "name": "contextkit",
+  "version": "0.1.0",
+  "description": "Lean, AI-tool-agnostic project context: 3 persistent markdown files (AGENTS.md, CHANGELOG.md, DECISIONS.md) instead of heavyweight Spec-Driven Development specs.",
+  "keywords": [
+    "ai-coding",
+    "agents-md",
+    "developer-tools",
+    "context",
+    "copilot",
+    "claude",
+    "cursor",
+    "windsurf",
+    "spec-driven-development"
+  ],
+  "license": "MIT",
+  "type": "commonjs",
+  "bin": {
+    "contextkit": "dist/cli.js"
+  },
+  "main": "dist/cli.js",
+  "files": [
+    "dist",
+    "templates",
+    "packs",
+    "principles-catalog.md",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "start": "node dist/cli.js"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "prompts": "^2.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/prompts": "^2.4.9",
+    "typescript": "^5.4.5"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

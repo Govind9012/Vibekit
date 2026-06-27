@@ -1,0 +1,10 @@
+<!--
+FORMAT: newest entry first. Each entry: exact date (never "yesterday"/"recently"),
+what changed, why, files/functions touched. Mark resolved entries [DONE] —
+the prune command deletes [DONE] entries older than the most recent 5.
+Keep this file under ~10 active entries at all times.
+-->
+
+## Changelog
+
+(no entries yet — run `contextkit log "description"` after your first change)

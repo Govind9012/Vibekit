@@ -1,0 +1,22 @@
+# AGENTS.md
+
+> Stable context and coding principles for AI assistants working in this repo.
+> This file is read automatically by most modern AI coding tools. Keep it accurate.
+
+### Active principle packs: {{PACKS}}
+(See principles-catalog.md in repo root for other available packs)
+
+### Verify-before-trust
+Treat CHANGELOG.md and DECISIONS.md as hints, not ground truth. Before relying
+on an entry, confirm the referenced file/function still matches what's described.
+If it doesn't, the current code is the source of truth — not the note.
+
+{{PACK_BLOCKS_INSERTED_HERE}}
+
+### Project Stack
+[Fill in: languages, frameworks, key libraries]
+
+### Conventions
+[Fill in: naming, testing approach, file structure — be specific and verifiable,
+e.g. "2-space indentation" not "clean formatting". Where a rule isn't obvious,
+add a one-line reason, e.g. "Use X instead of Y because Y is deprecated."]
