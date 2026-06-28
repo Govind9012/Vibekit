@@ -1,4 +1,4 @@
-[![npm version](https://img.shields.io/npm/v/vibekit.svg)](https://www.npmjs.com/package/vibekit)
+[![npm version](https://img.shields.io/npm/v/@govindchaudhary/vibekit.svg)](https://www.npmjs.com/package/@govindchaudhary/vibekit)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
 # Vibekit
@@ -20,7 +20,7 @@ canonical file is `AGENTS.md`, and everything else mirrors from it.
 ## Quickstart
 
 ```bash
-npx vibekit init
+npx @govindchaudhary/vibekit init
 ```
 
 Answer one question ("What's this project mostly?") and you're done — under two
@@ -42,7 +42,7 @@ directory:
 top of this GitHub repo to clone the structure into a fresh repository. Good for
 brand-new projects.
 
-**(b) npx CLI (add to an existing repo).** Run `npx vibekit init` inside any
+**(b) npx CLI (add to an existing repo).** Run `npx @govindchaudhary/vibekit init` inside any
 existing project to drop the files in without touching the rest of your code.
 
 ---

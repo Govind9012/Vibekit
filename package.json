@@ -1,6 +1,6 @@
 {
-  "name": "vibekit",
-  "version": "0.1.0",
+  "name": "@govindchaudhary/vibekit",
+  "version": "0.1.1",
   "description": "Make vibe coding accurate: 3 persistent markdown files (AGENTS.md, CHANGELOG.md, DECISIONS.md) that give any AI coding assistant lean, verifiable context — a lightweight alternative to heavyweight Spec-Driven Development.",
   "keywords": [
     "vibe-coding",
@@ -16,6 +16,9 @@
   ],
   "license": "MIT",
   "type": "commonjs",
+  "publishConfig": {
+    "access": "public"
+  },
   "bin": {
     "vibekit": "dist/cli.js"
   },
