@@ -1,6 +1,6 @@
 {
   "name": "@govindchaudhary/vibekit",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Make vibe coding accurate: 3 persistent markdown files (AGENTS.md, CHANGELOG.md, DECISIONS.md) that give any AI coding assistant lean, verifiable context — a lightweight alternative to heavyweight Spec-Driven Development.",
   "keywords": [
     "vibe-coding",

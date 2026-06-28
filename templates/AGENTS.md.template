@@ -11,6 +11,24 @@ Treat CHANGELOG.md and DECISIONS.md as hints, not ground truth. Before relying
 on an entry, confirm the referenced file/function still matches what's described.
 If it doesn't, the current code is the source of truth — not the note.
 
+### For AI assistants — automation rules
+When you make changes in this repo, you are responsible for keeping these context
+files accurate. Do not wait to be asked. Run these terminal commands yourself:
+
+- After completing any meaningful code change, run:
+  `vibekit log "<one-line summary of what changed and why>"`
+  Be specific. Include the file or function touched. Skip trivial edits (typos, formatting).
+- When you finish a feature or fix that was previously logged, edit that CHANGELOG.md
+  line to insert ` [DONE]` right after the date — e.g. `### 2026-06-28 [DONE] — ...`
+- If CHANGELOG.md has more than 8 active (non-[DONE]) entries, run: `vibekit prune`
+- If you add code that touches auth, encryption, secrets, user input, or DB queries
+  and the `security` pack is not already active, run: `vibekit packs add security`
+- If you make a non-obvious architectural choice (library swap, pattern change,
+  schema decision), append a short entry to DECISIONS.md with the date, the
+  decision, and one sentence of rationale.
+- Never invent file paths, function names, or API shapes. Read the file first
+  to verify before referencing it in a log or decision entry.
+
 {{PACK_BLOCKS_INSERTED_HERE}}
 
 ### Project Stack
