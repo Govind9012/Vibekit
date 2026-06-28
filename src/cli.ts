@@ -15,7 +15,7 @@ program
       '(AGENTS.md, CHANGELOG.md, DECISIONS.md) that keep vibe coding accurate, ' +
       'instead of heavyweight SDD specs.'
   )
-  .version('0.1.1');
+  .version('0.1.2');
 
 program
   .command('init')

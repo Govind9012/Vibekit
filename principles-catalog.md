@@ -49,6 +49,18 @@ For general application/software development.
 - **Interface Segregation** — small focused interfaces beat one large general-purpose one
 - **Dependency Inversion** — depend on abstractions, not concrete implementations
 
+### `security` — Security Principles
+
+For any project handling user input, auth, APIs, or stored data — especially relevant for fast vibe-coded apps.
+
+- **Never trust user input** — validate and sanitize at every boundary: client, API, and database layer
+- **No secrets in code** — use environment variables; never commit `.env` files
+- **Auth vs authZ** — authentication (who you are) and authorization (what you can do) are separate concerns
+- **Parameterized queries only** — never concatenate user input into SQL or shell commands
+- **Least privilege** — services, tokens, and DB roles get only the minimum access they need
+- **Assume breach** — log enough to detect anomalies, but never log passwords, tokens, PII, or secrets
+- **Validate on the server** — client-side validation is UX; server-side is security; never rely on only one
+
 ### `data-eng` — Data Engineering Principles
 
 For pipelines, ETL/ELT, and analytics engineering.
@@ -63,21 +75,21 @@ For pipelines, ETL/ELT, and analytics engineering.
 
 ## Adding your own custom pack
 
-1. Create a new file in `packs/`, e.g. `packs/security.md`.
+1. Create a new file in `packs/`, e.g. `packs/observability.md`.
 2. Wrap its content in start/end markers matching the file name:
 
    ```markdown
-   <!-- pack:security:start -->
-   ### Security Principles
-   - Least privilege: grant the minimum access required
-   - Never trust client input: validate and sanitize at every boundary
-   <!-- pack:security:end -->
+   <!-- pack:observability:start -->
+   ### Observability Principles
+   - Log at boundaries, not inside loops
+   - Every external call should have a timeout and a logged failure path
+   <!-- pack:observability:end -->
    ```
 
 3. Activate it:
 
    ```bash
-   vibekit packs add security
+   vibekit packs add observability
    ```
 
-The marker name (`security`) must match the file name (`security.md`).
+The marker name (`observability`) must match the file name (`observability.md`).
