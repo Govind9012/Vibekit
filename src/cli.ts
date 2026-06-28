@@ -4,7 +4,7 @@ import { initCommand } from './commands/init';
 import { logCommand } from './commands/log';
 import { pruneCommand } from './commands/prune';
 import { packsAddCommand, packsRemoveCommand } from './commands/packs';
-import { syncCommand } from './commands/sync';
+import { syncCommand, ALL_TOOLS, SyncTool } from './commands/sync';
 
 const program = new Command();
 
@@ -15,7 +15,7 @@ program
       '(AGENTS.md, CHANGELOG.md, DECISIONS.md) that keep vibe coding accurate, ' +
       'instead of heavyweight SDD specs.'
   )
-  .version('0.1.3');
+  .version('0.1.4');
 
 program
   .command('init')
@@ -62,14 +62,20 @@ packs
 program
   .command('sync')
   .description(
-    'Mirror AGENTS.md to CLAUDE.md, .windsurfrules, and ' +
-      '.github/copilot-instructions.md. Most modern tools (Copilot, Cursor, ' +
-      'Windsurf) now read AGENTS.md natively — sync is a fallback for older ' +
-      'setups that don\'t yet, or for teams who want the explicit native ' +
-      'filename present.'
+    'Mirror AGENTS.md to tool-specific files. Use flags to pick which tools ' +
+      '(e.g. --copilot --claude). With no flags, syncs to all three (Copilot, ' +
+      'Claude, Windsurf). `vibekit init` runs sync automatically for the ' +
+      'tools you picked, so this is mainly for adding a new tool later.'
   )
-  .action(() => {
-    syncCommand();
+  .option('--copilot', 'mirror to .github/copilot-instructions.md')
+  .option('--claude', 'mirror to CLAUDE.md')
+  .option('--windsurf', 'mirror to .windsurfrules')
+  .action((opts: { copilot?: boolean; claude?: boolean; windsurf?: boolean }) => {
+    const picked: SyncTool[] = [];
+    if (opts.copilot) picked.push('copilot');
+    if (opts.claude) picked.push('claude');
+    if (opts.windsurf) picked.push('windsurf');
+    syncCommand(picked.length > 0 ? picked : ALL_TOOLS);
   });
 
 async function main(): Promise<void> {
